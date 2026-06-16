@@ -38,6 +38,10 @@ public class AnimationGenerator {
 
                 JsonArray keyframes = animator.getJsonArray("keyframes");
 
+                if (keyframes == null) {
+                    continue;
+                }
+
                 for (int k = 0; k < keyframes.size(); k++) {
                     JsonObject keyframe = keyframes.getJsonObject(k);
                     String channel = keyframe.getString("channel");
